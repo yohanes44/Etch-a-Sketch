@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+
+
+
+*{
+    box-sizing: border-box;
+}
+
+
+
+body{
+    height: 100vh;
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 60px;
+
+
+  height: 100vh;
+  color: #fff;
+}
+.container{
+    height: 100vh;
+
+    display: grid;
+    grid-template-rows: 10% 80% 10%;
+}
+.header{
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.center{
+    background-color: black;
+
+    display: grid;
+
+
+    grid-template-columns: 25% 50% 25%;
+    grid-auto-rows: min-content(500px, auto);
+    
+}
+.menu{
+    background-color:wheat;
+    border: 35px solid rgba(0, 0, 0, 0.9);
+    background-color:slategrey;
+    display: flex;
+    align-items: center;
+    padding-top: 30px;
+    gap: 15px;
+    flex-direction: column;
+
+    
+}
+
+#color-picker,button{
+
+    border: 4px solid black;
+    border-radius: 30%;
+    width: 100px;
+    padding: 7px;
+    font-size: 20px;
+    color:rgba(0, 0, 0, 1);
+    font-family:'Courier New', Courier, monospace;
+
+}
+
+#color-picker{
+    height: 50px;
+}
+.reset{
+    color: red;
+    width: max-content;
+    font-size: 50px;
+    font-weight: bolder;
+    height: 100px;
+}
+.randomColor{
+    font-weight: bolder;
+    font-size: 33px;
+    width: max-content;
+    height: 100px;
+}
+h2{
+    font-weight: bolder;
+    margin-top: 100px;
+    font-size: 50px;
+    color: black;
+    font-family:monospace;
+}
+
+.gridRange{
+    width: 20%;
+}
+.sketch{
+    background-color:silver;
+    box-sizing: border-box;
+     display: grid;
+     grid-template-rows: repeat(16, 1fr);
+     grid-template-columns: repeat(16, 1fr);
+    
+
+}
+.leftOver{
+    background-color: beige;
+}
+
+.item{
+    border: 1px solid black;
+}
+
+.divs{
+    border:1px solid rgba(0, 0, 0, 0.1)
+}
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(45, 45, 56, 0.514);
+    font-size: 50px;
+    gap: 4px;
+    color: black;
+}
+
+.icons{
+    
+    padding: 3px;
+}
+.icons:hover{
+        background-color: green;
+        transition: 0.3s;
+        transform: scale(1.1);
+}
+
+.rangeMin{
+    color: black;
+    font-size: 20px;
+    color: red;
+}
+
+.rangeMin{
+    font-size: 50px;
+}
+
+
+
+
+
+@media(max-width: 900px) {
+
+
+.container{
+    display: grid;
+    grid-template-rows: 15% 95% 15%;
+
+
+}
+.center{
+background-color: black;
+ display: grid;
+ grid-template-rows: 20% 70% 10%;
+}
+
+
+.menu{
+    background-color: black;
+    width: 130px;
+    margin: 0px;
+    margin-bottom: 0px;
+    padding-top: 10px;
+    height: 447px;
+    margin-top: 0px;
+    width: 130px;
+    align-self: stretch;
+
+    border-radius: 3%;
+    background-color:wheat;
+    border: 0px solid rgba(0, 0, 0, 0.9);
+}
+
+.sketch{
+    background-color:silver;
+    box-sizing: border-box;
+    height:447px;
+    width: 447px;
+    
+    
+    margin: 0px;
+     display: grid;
+     grid-template-rows: repeat(16, 1fr);
+     grid-template-columns: repeat(16, 1fr);
+    
+    
+}
+.leftOver{
+    height: 0px;
+    width: 0px;
+}
+
+
+
+
+.reset{
+    color: red;
+    font-size: 15px;
+    font-weight: bolder;
+}
+.randomColor{
+    font-weight: bolder;
+    font-size: 15px;
+}
+h2{
+    font-size: 13px;
+    color: black;
+    font-family:monospace;
+}
+#color-picker,button{
+
+    font-size: 15px;
+    color:rgba(0, 0, 0, 1);
+    font-family:'Courier New', Courier, monospace;
+
+}
+
+body{
+    background-color: black;
+}
+.footer{
+    font-size: 15px;
+    background-color:rgba(45, 45, 56, 0.514)
+}
+}
+
+
+</style>
+</head>
+<body>
+     <div class="container">
+        <div class="header">ETCH-A-SKETCH</div>        
+        
+        <div class="center">
+          <div class="menu">
+               <button class="reset">Reset</button>
+               <input type="range" value="16" min="1" max="100" class="gridRange">
+               <span class="rangeMin"></span>
+               <span class="rangeMax"></span>
+              <button class="randomColor">Random color</button>
+              <h2>Select Your Color Here</h2>
+              <input type="color" id="color-picker" />
+            </div>
+          <div class="sketch">
+            
+          </div>
+          <div class="leftOver"></div>  
+        </div>
+
+        <div class="footer"> 
+            <span>Made by : </span>
+            <a class="icons" href="https://github.com/yohanes44" target="__blank"><ion-icon name="logo-github"></ion-icon></a>
+            <a class="icons" href="https://www.linkedin.com/in/yohanes-debebe-76024a209" target="__blank"><ion-icon name="logo-linkedin"></ion-icon></a>
+            <span>Yohanes</span>
+            <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+            <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        </div>
+
+     </div>
+
+<script>
+
+let sketchContainer = document.querySelector(".sketch");
+let oldDivs = document.querySelector(".divs");
+let btn = document.querySelector(".reset");
+let randomColor = document.querySelector(".randomColor");
+let colorPicker = document.querySelector("#color-picker");
+
+let gridRange = document.querySelector(".gridRange");
+let rangeMin = document.querySelector(".rangeMin");
+let rangeMax = document.querySelector(".rangeMax");
+
+
+
+for(let i = 0 ; i<=256; i++ ){
+    let oldDivs = document.createElement("div");
+    oldDivs.classList.add("divs");
+    sketchContainer.appendChild(oldDivs);
+}
+
+rangeMin.innerHTML = 16;
+
+btn.addEventListener("click", () => { //Create divs based on the input
+    sketchContainer.innerHTML="";
+    let newGrid = prompt("How many squares per side? (Maximum: 100)");
+    while(newGrid > 100 ){
+        newGrid = prompt("You must enter a positive integer. (Maximum: 100)");
+    }
+    console.log(newGrid);
+      if (newGrid == "" ||newGrid == null){
+        newGrid = 16; 
+      }
+    createGrid(newGrid);
+    rangeValueDisplay(newGrid);
+    backgroundChanger("black");
+});
+
+
+function rangeValueDisplay(n){ //Display number of grids column/row  
+    rangeMin.innerHTML = n;
+}
+
+
+function createGrid(num) {  //Create divs and append
+     sketchContainer.style.gridTemplateColumns = "";
+     sketchContainer.style.gridTemplateRows = "";
+     let sqr = num * num;    
+     for(let i = 1; i<=sqr; i++){
+         let oldDivs = document.createElement("div"); 
+         oldDivs.classList.add("divs");
+         sketchContainer.appendChild(oldDivs);        
+     }
+     sketchContainer.style.gridTemplateColumns = `repeat(${num}, 1fr)`; 
+     sketchContainer.style.gridTemplateRows = `repeat(${num}, 1fr)`;      
+}
+
+
+function backgroundChanger(col){  //Change background 
+    document.querySelectorAll(".divs").forEach((elem) => elem.addEventListener("mouseover", () => elem.style.cssText= `background: ${col}`));
+}
+
+
+gridRange.oninput = () => {  //Create grids based on the Range Input
+    let rangeValue = gridRange.value; 
+    let sqrRange = rangeValue * rangeValue;
+    sketchContainer.innerHTML= "";
+    createGrid(rangeValue);
+    backgroundChanger("black");
+    rangeValueDisplay(rangeValue);
+}
+
+
+document.querySelectorAll(".divs").forEach((elem) => elem.addEventListener("mouseover", () => elem.style.background = "black")); //Change background to black for all grids
+
+
+randomColor.addEventListener("click", () => { //Change background to random color for all grids
+    document.querySelectorAll(".divs").forEach((elem) => elem.addEventListener("mouseover", () => elem.style.background = toRandomColor()));
+});
+
+
+function toRandomColor(){// Return random colors to randomColor button(which has an event handler attached to it)
+    differentColor = Math.floor(Math.random()*16777215).toString(16);
+    console.log('#' + differentColor);
+    return '#' + differentColor;
+}
+
+
+colorPicker.addEventListener("input", ()=>{ //Choose background from Color-Picker
+    let selectedColor = colorPicker.value;
+    console.log(selectedColor);
+    backgroundChanger(selectedColor);    
+});
+
+</script>
+
+
+</body>
+</html>
